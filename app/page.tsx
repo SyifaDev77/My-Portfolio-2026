@@ -3,22 +3,8 @@ import Link from "next/link";
 
 export default function Home() {
   const programmingSkills = [
-    {
-      label: "Next.js",
-      logoSrc: "/skills/nextjs.svg",
-    },
-    {
-      label: "TypeScript",
-      logoSrc: "/skills/typescript.svg",
-    },
-    {
-      label: "React",
-      logoSrc: "/skills/react.svg",
-    },
-    {
-      label: "Tailwind CSS",
-      logoSrc: "/skills/tailwind.svg",
-    },
+    {label: "Next.js",logoSrc: "/skills/next.png",},
+    {label: "Tailwind CSS",logoSrc: "/skills/tailwind.svg",},
     { label: "HTML", logoSrc: "/skills/html.svg" },
     { label: "CSS", logoSrc: "/skills/css.svg" },
     { label: "JavaScript", logoSrc: "/skills/javascript.svg" },
@@ -31,10 +17,7 @@ export default function Home() {
   ];
 
   const otherSkills = [
-    {
-      label: "Blender",
-      logoSrc: "/skills/blender.svg",
-    },
+    {label: "Blender",logoSrc: "/skills/blender.svg",},
     {
       label: "Canva",
       logoSrc: "/skills/canva.svg",
@@ -223,7 +206,7 @@ const certificates = [
           <div className="flex justify-center lg:justify-start">
             <div className="relative aspect-[4/5] w-full max-w-xs overflow-hidden rounded-[2rem] border border-[var(--accent)]/25 bg-[var(--background)]/40 shadow-[0_18px_50px_rgba(15,23,42,0.28)]">
               <Image
-                src="/profile.jpg"
+                src="/profile.jpeg"
                 alt="Portrait of Asy Syifa"
                 fill
                 className="object-cover"
@@ -397,17 +380,15 @@ const certificates = [
   </div>
 </section>
 
-      <section id="education" className="section-shell">
+<section id="education" className="section-shell">
   <div>
     <p className="section-kicker">Education</p>
     <h2 className="section-title">Academic Journey</h2>
 
     <div className="education-grid">
       {education.map((item) => (
-        <div
-          key={item.school}
-          className="education-card"
-        >
+        <div key={item.school} className="education-card">
+
           <div className="education-icon">
             🎓
           </div>
@@ -421,6 +402,7 @@ const certificates = [
           <p className="education-detail">
             {item.detail}
           </p>
+
         </div>
       ))}
     </div>

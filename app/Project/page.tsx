@@ -1,7 +1,19 @@
-import Project from "./project";
+import Link from "next/link";
+
 
 const projects = [
+  
   {
+    slug: "math-bingo",
+    title: "Math Bingo Game",
+    description:
+      "An educational web game that combines learning and gameplay with interactive features.",
+    tech: ["HTML", "CSS", "JavaScript"],
+    image: "/projects/mathbingo.png",
+  },
+
+    {
+    slug: "arvolcano",
     title: "ARVolcano",
     description:
       "An Augmented Reality educational application that allows users to explore volcano eruptions through interactive 3D visualization and scenario-based learning.",
@@ -9,18 +21,12 @@ const projects = [
     image: "/projects/arvolcano.png",
   },
   {
+    slug: "gims",
     title: "GIMS",
     description:
       "A web-based management system developed to manage documents, reports, and administrative workflows.",
     tech: ["Laravel", "PHP", "MySQL"],
     image: "/projects/gims.png",
-  },
-  {
-    title: "Math Bingo Game",
-    description:
-      "An educational web game that combines learning and gameplay with interactive features.",
-    tech: ["HTML", "CSS", "JavaScript"],
-    image: "/projects/mathbingo.png",
   },
 ];
 
@@ -29,7 +35,7 @@ export default function Page() {
   return (
     <main className="min-h-screen bg-[#050B1A] text-white px-6 py-20">
 
-      {/* Title */}
+
       <section className="max-w-5xl mx-auto text-center">
 
         <p className="text-cyan-400 tracking-[0.3em] uppercase text-sm">
@@ -70,22 +76,23 @@ export default function Page() {
       ">
 
         {projects.map((project,index)=>(
-          <article
-            key={index}
-            className="
-              group
-              bg-[#0D1B2A]
-              border
-              border-cyan-500/20
-              rounded-2xl
-              overflow-hidden
-              shadow-lg
-              hover:border-cyan-400
-              hover:shadow-cyan-500/20
-              transition-all
-              duration-300
-            "
-          >
+        <article
+        key={project.slug}
+  className="
+    group
+    bg-[#0D1B2A]
+    border border-cyan-500/20
+    rounded-2xl
+    overflow-hidden
+    shadow-lg
+    hover:border-cyan-400
+    hover:shadow-cyan-500/20
+    transition-all
+    duration-300
+    flex
+    flex-col
+  "
+>
 
             {/* Image */}
             <div className="
@@ -107,7 +114,7 @@ export default function Page() {
             </div>
 
 
-            <div className="p-6">
+            <div className="p-6 flex flex-col flex-1">
 
               <h2 className="
                 text-2xl
@@ -156,7 +163,8 @@ export default function Page() {
 
 
 
-              <button
+              <Link
+                href={`/Project/${project.slug}`}
                 className="
                   mt-6
                   px-6
@@ -170,7 +178,7 @@ export default function Page() {
                 "
               >
                 View Details
-              </button>
+              </Link>
 
             </div>
 

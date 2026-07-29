@@ -233,6 +233,7 @@ body {
     padding:60px 0;
 }
 
+/* Default gold line */
 .timeline::before{
     content:"";
     position:absolute;
@@ -240,15 +241,31 @@ body {
     top:0;
     width:4px;
     height:100%;
-    background:#D4AF37; /* gold */
+    background:#D4AF37;
     transform:translateX(-50%);
+    transition:.4s ease;
 }
+
+/* White hover glow line */
+.timeline:hover::before{
+    background:#ffffff;
+    box-shadow:
+        0 0 10px rgba(255,255,255,.8),
+        0 0 25px rgba(255,255,255,.5);
+}
+
 
 .timeline-item{
     width:50%;
     position:relative;
     padding:20px 40px;
+    transition:.3s ease;
 }
+
+.timeline-item:hover{
+    transform:translateY(-8px);
+}
+
 
 .timeline-item.left{
     left:0;
@@ -260,6 +277,8 @@ body {
     text-align:left;
 }
 
+
+/* Marker */
 .timeline-marker{
     position:absolute;
     top:40px;
@@ -267,7 +286,19 @@ body {
     height:22px;
     background:#D4AF37;
     border-radius:50%;
+    transition:.3s ease;
 }
+
+
+/* Marker hover */
+.timeline-item:hover .timeline-marker{
+    background:#ffffff;
+    box-shadow:
+        0 0 10px white,
+        0 0 25px rgba(255,255,255,.8);
+    transform:scale(1.2);
+}
+
 
 .timeline-item.left .timeline-marker{
     right:-11px;
@@ -277,35 +308,59 @@ body {
     left:-11px;
 }
 
+.education-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:30px; /* space between cards */
+    margin-top:2rem;
+}
 
 .education-card{
-    background:#f8fafc;
+    background:#182a3c;
     color:#0f172a;
-    border:1px solid rgba(255,255,255,.2);
     border-radius:20px;
-    padding:2rem;
-    transition:.3s;
-    box-shadow:0 10px 30px rgba(0,0,0,.25);
+    padding:2.5rem;
+    border:1px solid rgba(34,211,238,.15);
+    transition:.3s ease;
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
 }
 
 .education-card:hover{
     transform:translateY(-8px);
     border-color:#22d3ee;
-    box-shadow:0 15px 35px rgba(34,211,238,.25);
+    box-shadow:0 20px 45px rgba(34,211,238,.25);
 }
 
-.education-period{
-    color:#475569;
-    font-weight:600;
-    margin:.5rem 0;
+.education-icon{
+    width:65px;
+    height:65px;
+    border-radius:16px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:32px;
+    background:#e0f7ff;
+    margin-bottom:1.2rem;
 }
 
 .education-card h3{
-    color:#0f172a;
+    font-size:1.5rem; /* bigger school/course title */
+    font-weight:700;
+    color:#ffffff;
+    margin-bottom:.8rem;
 }
 
-.education-card p{
-    color:#334155;
+.education-period{
+    font-size:1.15rem;
+    color:#0891b2;
+    font-weight:700;
+    margin:.6rem 0;
+}
+
+.education-detail{
+    font-size:1.15rem;
+    color:#f9fbff;
+    line-height:1.7;
 }
 
   .section-card--certificate {

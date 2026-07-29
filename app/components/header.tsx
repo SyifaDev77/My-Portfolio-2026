@@ -15,13 +15,13 @@ export default function Navbar() {
           >
            Home
           </Link>
-          <Link
-            href="/"
-            className="rounded-full border border-[var(--accent)]/35 px-4 py-2 text-[var(--muted-foreground)] transition hover:border-[var(--accent)] hover:bg-[var(--accent)] hover:text-[var(--background)]"
-          >
-           Download My Resume
-          </Link>
-
+<a
+  href="/documents/asy syifa-resume.pdf"
+  download="Asy Syifa_Resume.pdf"
+  className="rounded-full border border-[var(--accent)]/35 px-4 py-2 text-[var(--muted-foreground)] transition hover:border-[var(--accent)] hover:bg-[var(--accent)] hover:text-[var(--background)]"
+>
+  Download My Resume
+</a>
         </nav>
       </div>
     </header>
