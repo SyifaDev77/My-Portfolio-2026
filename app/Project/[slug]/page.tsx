@@ -54,7 +54,7 @@ const projects = [
 
     gallery: [
       "/projects/arvolcano/arvolcano1.jpg",
-      "/projects/arvolcano/arvolcano2.jfif",
+      "/projects/arvolcano/arvolcano2.png",
       "/projects/arvolcano/arvolcano3.jpg",
     ],
 
