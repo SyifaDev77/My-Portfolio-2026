@@ -3,44 +3,44 @@ import Link from "next/link";
 
 export default function Home() {
   const programmingSkills = [
-    {label: "Next.js",logoSrc: "/skills/next.png",},
-    {label: "Tailwind CSS",logoSrc: "/skills/tailwind.svg",},
-    { label: "HTML", logoSrc: "/skills/html.svg" },
-    { label: "CSS", logoSrc: "/skills/css.svg" },
-    { label: "JavaScript", logoSrc: "/skills/javascript.svg" },
-    { label: "PHP & MySQL", logoSrc: "/skills/php-mysql.svg" },
-    { label: "Laravel", logoSrc: "/skills/laravel.svg" },
-    { label: "C++", logoSrc: "/skills/cpp.svg" },
-    { label: "C#", logoSrc: "/skills/csharp.svg" },
-    { label: "Python", logoSrc: "/skills/python.svg" },
-    { label: "GitHub", logoSrc: "/skills/github.svg" },
+    {label: "Next.js",logoSrc: "/skills/nextjs.png",},
+    {label: "Tailwind CSS",logoSrc: "/skills/tailwind.png",},
+    { label: "HTML", logoSrc: "/skills/html.png" },
+    { label: "CSS", logoSrc: "/skills/css.png" },
+    { label: "JavaScript", logoSrc: "/skills/java.png" },
+    { label: "PHP & MySQL", logoSrc: "/skills/phpmysql.png" },
+    { label: "Laravel", logoSrc: "/skills/larvel.png" },
+    { label: "C++", logoSrc: "/skills/cpp.png" },
+    { label: "C#", logoSrc: "/skills/csharp.png" },
+    { label: "Python", logoSrc: "/skills/python.png" },
+    { label: "GitHub", logoSrc: "/skills/github.png" },
   ];
 
   const otherSkills = [
-    {label: "Blender",logoSrc: "/skills/blender.svg",},
+    {label: "Blender",logoSrc: "/skills/blender.png",},
     {
       label: "Canva",
-      logoSrc: "/skills/canva.svg",
+      logoSrc: "/skills/canva.png",
     },
     {
       label: "Affinity",
-      logoSrc: "/skills/affinity.svg",
+      logoSrc: "/skills/affinity.png",
     },
     {
       label: "Vuforia AR",
-      logoSrc: "/skills/vuforia-ar.svg",
+      logoSrc: "/skills/vuforia.png",
     },
     {
       label: "Unity 3D/2D",
-      logoSrc: "/skills/unity.svg",
+      logoSrc: "/skills/unity.png",
     },
     {
       label: "Adobe Illustrator",
-      logoSrc: "/skills/illustrator.svg",
+      logoSrc: "/skills/illustrator.png",
     },
     {
       label: "Figma",
-      logoSrc: "/skills/figma.svg",
+      logoSrc: "/skills/figma.png",
     },
   ];
 
