@@ -128,219 +128,72 @@ export default async function ProjectDetail({
 
 
   return (
-    <main className="min-h-screen bg-[#050B1A] text-white px-6 py-20 ">
+    <main className="project-shell">
+      <div className="site-ornament site-ornament--mist" />
+      <div className="site-ornament site-ornament--moon" />
+      <div className="site-ornament site-ornament--snitch" />
+      <div className="site-ornament site-ornament--stars" />
 
+      <section className="project-page">
+        <div className="project-hero">
+          <p className="project-hero__eyebrow">Portfolio Relic</p>
+          <h1 className="project-hero__title">{project.title}</h1>
+          <p className="project-hero__copy">{project.description}</p>
 
-      {/* Hero */}
-   <section className="max-w-5xl mx-auto">
+          <div className="project-hero__panel">
+            <div className="project-panel">
+              <h2 className="project-panel__title">Project Information</h2>
+              <div className="project-panel__copy">
+                <p>Role: {project.role}</p>
+                <p>Year: {project.year}</p>
+              </div>
+            </div>
 
-  {/* Title */}
-  <h1 className="
-    mt-12
-    text-5xl
-    font-bold
-    text-cyan-300
-  ">
-    {project.title}
-  </h1>
-
-
-  {/* Description */}
-  <p className="
-    mt-5
-    text-slate-400
-    leading-relaxed
-  ">
-    {project.description}
-  </p>
-
-</section>
-
-
-
-      {/* Information */}
-      <section className="
-        max-w-5xl
-        mx-auto
-        mt-16
-        grid
-        md:grid-cols-2
-        gap-8
-      ">
-
-
-        <div className="
-          bg-[#0D1B2A]
-          rounded-2xl
-          p-6
-          border
-          border-cyan-500/20
-        ">
-
-          <h2 className="text-2xl text-cyan-300 font-semibold">
-            Project Information
-          </h2>
-
-
-          <p className="mt-4 text-slate-400">
-            Role: {project.role}
-          </p>
-
-          <p className="mt-2 text-slate-400">
-            Year: {project.year}
-          </p>
-
+            <div className="project-panel">
+              <h2 className="project-panel__title">Technologies</h2>
+              <div className="project-panel__tags">
+                {project.tech.map((item) => (
+                  <span key={item} className="project-chip">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
 
-
-
-        <div className="
-          bg-[#0D1B2A]
-          rounded-2xl
-          p-6
-          border
-          border-cyan-500/20
-        ">
-
-          <h2 className="text-2xl text-cyan-300 font-semibold">
-            Technologies
-          </h2>
-
-
-          <div className="flex flex-wrap gap-2 mt-4">
-
-            {project.tech.map((item)=>(
-              <span
-                key={item}
-                className="
-                  px-3
-                  py-1
-                  rounded-full
-                  text-sm
-                  bg-cyan-400/10
-                  border
-                  border-cyan-400/30
-                  text-cyan-300
-                "
-              >
-                {item}
-              </span>
-            ))}
-
+        <section className="project-page__grid">
+          <div className="project-panel">
+            <h2 className="project-panel__title">Key Features</h2>
+            <div className="project-panel__tags" style={{ marginTop: "1rem" }}>
+              {project.features.map((feature) => (
+                <div key={feature} className="project-chip" style={{ justifyContent: "flex-start", width: "100%" }}>
+                  ✓ {feature}
+                </div>
+              ))}
+            </div>
           </div>
 
+          <div className="project-gallery">
+            {project.gallery.map((img, index) => (
+              <div key={index} className="project-gallery-card">
+                <Image
+                  src={img}
+                  alt={`${project.title} screenshot ${index + 1}`}
+                  width={800}
+                  height={450}
+                />
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <div style={{ marginTop: "1.75rem" }}>
+          <Link href="/Project" className="project-back">
+            ← Back To Projects
+          </Link>
         </div>
-
-
       </section>
-
-
-
-
-      {/* Features */}
-      <section className="
-        max-w-5xl
-        mx-auto
-        mt-16
-      ">
-
-        <h2 className="
-          text-3xl
-          font-bold
-          text-cyan-300
-        ">
-          Key Features
-        </h2>
-
-
-        <div className="mt-6 space-y-3">
-
-          {project.features.map((feature)=>(
-            <div
-              key={feature}
-              className="
-                bg-[#0D1B2A]
-                p-4
-                rounded-xl
-                border
-                border-cyan-500/20
-              "
-            >
-              ✓ {feature}
-            </div>
-          ))}
-
-        </div>
-        
-
-        <div
-  className="
-    grid
-    grid-cols-3
-    gap-4
-  "
->
-  {project.gallery.map((img, index) => (
-    <div
-      key={index}
-      className="
-        aspect-video
-        overflow-hidden
-        rounded-xl
-        border
-        border-cyan-500/20
-        bg-[#0D1B2A]
-        flex
-        items-center
-        justify-center
-      "
-    >
-      <Image
-        src={img}
-        alt={`${project.title} screenshot ${index + 1}`}
-        width={800}
-        height={450}
-        className="
-          w-full
-          h-full
-          object-contain
-          hover:scale-105
-          transition
-        "
-      />
-    </div>
-  ))}
-</div>
-
-
-      </section>
-
-
-
-
-      {/* Back Button */}
-      <div className="max-w-5xl mx-auto mt-16">
-
-        <Link
-          href="/Project"
-          className="
-            inline-block
-            px-6
-            py-3
-            rounded-full
-            bg-cyan-400
-            text-[#050B1A]
-            font-semibold
-            hover:bg-cyan-300
-            transition
-          "
-        >
-          ← Back To Projects
-        </Link>
-
-      </div>
-
-
     </main>
   );
 }

@@ -17,7 +17,7 @@ const projects = [
     title: "ARVolcano",
     description:
       "An Augmented Reality educational application that allows users to explore volcano eruptions through interactive 3D visualization and scenario-based learning.",
-    tech: ["Unity", "Vuforia", "C#", "AR"],
+    tech: ["Unity", "Vuforia", "AR"],
     image: "/projects/arvolcano.png",
   },
   {
@@ -33,161 +33,50 @@ const projects = [
 
 export default function Page() {
   return (
-    <main className="min-h-screen bg-[#050B1A] text-white px-6 py-20">
+    <main className="project-shell">
+      <div className="site-ornament site-ornament--mist" />
+      <div className="site-ornament site-ornament--moon" />
+      <div className="site-ornament site-ornament--snitch" />
+      <div className="site-ornament site-ornament--stars" />
 
+      <section className="project-page">
+        <div className="project-hero">
+          <p className="project-hero__eyebrow">Portfolio</p>
+          <h1 className="project-hero__title">My Projects</h1>
+          <p className="project-hero__copy">
+            A showcase of my development projects, research, and creative works in multimedia computing.Each project is treated like a magical object in the cabinet: built with care, tested in the wild, and polished for presentation.
+          </p>
+        </div>
 
-      <section className="max-w-5xl mx-auto text-center">
-
-        <p className="text-cyan-400 tracking-[0.3em] uppercase text-sm">
-          Portfolio
-        </p>
-
-        <h1 className="
-          text-5xl 
-          font-bold 
-          mt-4
-          bg-gradient-to-r 
-          from-cyan-300 
-          to-blue-500
-          bg-clip-text 
-          text-transparent
-        ">
-          My Projects
-        </h1>
-
-
-        <p className="text-slate-400 mt-5">
-          A showcase of my development projects, research,
-          and creative works in multimedia computing.
-        </p>
-
-      </section>
-
-
-
-      {/* Cards */}
-      <section className="
-        max-w-6xl mx-auto
-        mt-16
-        grid
-        md:grid-cols-2
-        lg:grid-cols-3
-        gap-8
-      ">
-
-        {projects.map((project,index)=>(
-        <article
-        key={project.slug}
-  className="
-    group
-    bg-[#0D1B2A]
-    border border-cyan-500/20
-    rounded-2xl
-    overflow-hidden
-    shadow-lg
-    hover:border-cyan-400
-    hover:shadow-cyan-500/20
-    transition-all
-    duration-300
-    flex
-    flex-col
-  "
->
-
-            {/* Image */}
-            <div className="
-              h-52
-              bg-[#112240]
-              overflow-hidden
-            ">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="
-                  w-full
-                  h-full
-                  object-cover
-                  group-hover:scale-110
-                  transition
-                "
-              />
-            </div>
-
-
-            <div className="p-6 flex flex-col flex-1">
-
-              <h2 className="
-                text-2xl
-                font-semibold
-                text-cyan-300
-              ">
-                {project.title}
-              </h2>
-
-
-              <p className="
-                text-slate-400
-                mt-3
-                text-sm
-                leading-relaxed
-              ">
-                {project.description}
-              </p>
-
-
-
-              <div className="
-                flex
-                flex-wrap
-                gap-2
-                mt-5
-              ">
-                {project.tech.map((item)=>(
-                  <span
-                    key={item}
-                    className="
-                      px-3
-                      py-1
-                      rounded-full
-                      text-xs
-                      bg-cyan-400/10
-                      text-cyan-300
-                      border
-                      border-cyan-400/30
-                    "
-                  >
-                    {item}
-                  </span>
-                ))}
+        <section className="project-page__grid project-grid project-page__grid--summary">
+          {projects.map((project) => (
+            <article key={project.slug} className="project-card">
+              <div className="project-card__image">
+                <img src={project.image} alt={project.title} />
               </div>
 
+              <div className="project-card__body">
+                <h2 className="project-card__title">{project.title}</h2>
+                <p className="project-card__copy">{project.description}</p>
 
+                <div className="project-chip-row project-card__tags">
+                  {project.tech.map((item) => (
+                    <span key={item} className="project-chip">
+                      {item}
+                    </span>
+                  ))}
+                </div>
 
-              <Link
-                href={`/Project/${project.slug}`}
-                className="
-                  mt-6
-                  px-6
-                  py-2
-                  rounded-full
-                  bg-cyan-400
-                  text-[#050B1A]
-                  font-semibold
-                  hover:bg-cyan-300
-                  transition
-                "
-              >
-                View Details
-              </Link>
-
-            </div>
-
-
-          </article>
-        ))}
-
+                <div className="project-card__actions">
+                  <Link href={`/Project/${project.slug}`} className="project-button">
+                    View Details
+                  </Link>
+                </div>
+              </div>
+            </article>
+          ))}
+        </section>
       </section>
-
     </main>
   );
 }
