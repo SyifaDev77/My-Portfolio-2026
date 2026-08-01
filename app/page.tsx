@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Home() {
   const programmingSkills = [
-    {label: "Next.js",logoSrc: "/skills/nextjs.png",},
+    {label: "Next.js",logoSrc: "public/skills/nextjs.png",},
     {label: "Tailwind CSS",logoSrc: "/skills/tailwind.png",},
     { label: "HTML", logoSrc: "/skills/html.png" },
     { label: "CSS", logoSrc: "/skills/css.png" },
