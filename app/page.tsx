@@ -146,6 +146,8 @@ const certificates = [
 
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
+  const GITHUB_URL = "https://github.com/SyifaDev77/SyifaDev77";
+
 
   const visibleProgrammingSkills = programmingSkills.slice(0, 5);
   const hiddenProgrammingSkills = programmingSkills.slice(5);
@@ -182,6 +184,15 @@ const certificates = [
               <Link href="/Project" className="magic-button magic-button--primary">
                 View My Projects
               </Link>
+              <a
+                href={GITHUB_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="magic-button magic-button--secondary"
+                aria-label="GitHub profile"
+              >
+                View GitHub
+              </a>
             </div>
           </div>
 
