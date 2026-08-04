@@ -1,3 +1,6 @@
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -118,10 +121,16 @@ export default function Home() {
   ];
 
 const certificates = [
+
+  {
+      title: "Notification of Copyright Registration",
+      description: "Issued by Copyright Act 1987 [Act 332]",
+      image: "/certificates/cp-gims.png",
+    },
     {
       title: "Foundation of User Experience (UX) Design",
       description: "Issued by Google Coursera",
-      image: "/certificates/google-ux.jpeg",
+      image: "/certificates/google-ux(1).jpeg",
     },
     {
       title: "Fundamentals of sustainable and Technology",
@@ -134,6 +143,8 @@ const certificates = [
       image: "/certificates/ai.png",
     },
   ];
+
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
 
   const visibleProgrammingSkills = programmingSkills.slice(0, 5);
@@ -371,7 +382,16 @@ const certificates = [
 
           <div className="certificate-grid">
             {certificates.map((certificate) => (
-              <article key={certificate.title} className="certificate-card">
+              <article
+                key={certificate.title}
+                className="certificate-card"
+                role="button"
+                tabIndex={0}
+                onClick={() => setSelectedImage(certificate.image)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") setSelectedImage(certificate.image);
+                }}
+              >
                 <div className="certificate-media">
                   <img
                     src={certificate.image}
@@ -389,6 +409,35 @@ const certificates = [
           </div>
         </div>
       </section>
+
+      {selectedImage ? (
+        <div
+          className="certificate-modal"
+          onClick={() => setSelectedImage(null)}
+          style={{
+            position: "fixed",
+            inset: 0,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            background: "rgba(0,0,0,0.7)",
+            zIndex: 60,
+            padding: "2rem",
+          }}
+        >
+          <img
+            src={selectedImage}
+            alt="Full certificate"
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              maxWidth: "90%",
+              maxHeight: "90%",
+              boxShadow: "0 8px 30px rgba(0,0,0,0.6)",
+              borderRadius: "6px",
+            }}
+          />
+        </div>
+      ) : null}
 
       <section id="contact" className="section-shell section-shell--end">
         <div className="contact-card">

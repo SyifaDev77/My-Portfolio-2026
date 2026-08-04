@@ -16,7 +16,6 @@ const medievalSharp = MedievalSharp({
 
 export const metadata: Metadata = {
   title: "SYIFA' | Portfolio",
-  description: "A Harry Potter-inspired portfolio with magical motion and storytelling.",
 };
 
 export default function RootLayout({
