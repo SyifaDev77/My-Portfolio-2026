@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
+import DesignGallery from "./DesignGallery";
 
 const projects = [
   {
@@ -105,6 +106,39 @@ const projects = [
     year: "2026",
   },
 
+    {
+    slug: "Design",
+    title: "Design and 3D Modeling",
+
+    description:
+      "A collection of designs and 3D models created for various projects and assignments.",
+
+    tech: [
+    "Blender",
+    "Canva",
+    "Illustrator",
+  ],
+
+    gallery: [
+      "/projects/design/Bunting (SULAM Mei 2025).png",
+      "/projects/design/BANNER 6X3 RAYA.png",
+      "/projects/design/Anis&Syifa_City_CSC6583C.mp4",
+      "/projects/design/design.mp4",
+
+    ],
+
+     features: [
+    "Centralized document management",
+    "Reporting and administrative modules",
+    "Role-based user access",
+    "Responsive dashboard interface",
+    "Secure data management"
+  ],
+
+    role: "UI/UX Designer Internship",
+    year: "2026",
+  },
+
 ];
 
 
@@ -174,18 +208,22 @@ export default async function ProjectDetail({
             </div>
           </div>
 
-          <div className="project-gallery">
-            {project.gallery.map((img, index) => (
-              <div key={index} className="project-gallery-card">
-                <Image
-                  src={img}
-                  alt={`${project.title} screenshot ${index + 1}`}
-                  width={800}
-                  height={450}
-                />
-              </div>
-            ))}
-          </div>
+          {project.slug === "Design" ? (
+            <DesignGallery items={project.gallery} title={project.title} />
+          ) : (
+            <div className="project-gallery">
+              {project.gallery.map((img, index) => (
+                <div key={index} className="project-gallery-card">
+                  <Image
+                    src={img}
+                    alt={`${project.title} screenshot ${index + 1}`}
+                    width={800}
+                    height={450}
+                  />
+                </div>
+              ))}
+            </div>
+          )}
         </section>
 
         <div style={{ marginTop: "1.75rem" }}>

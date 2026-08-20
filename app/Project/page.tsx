@@ -28,6 +28,15 @@ const projects = [
     tech: ["Laravel", "PHP", "MySQL"],
     image: "/projects/gims.png",
   },
+
+  {
+    slug: "Design",
+    title: "Design and 3D Modeling",
+    description:
+      "A collection of designs and 3D models created for various projects and assignments.",
+    tech: ["Blender", "Canva", "Illustrator"],
+    image: "/projects/BLENDER.png",
+  },
 ];
 
 
