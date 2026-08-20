@@ -124,6 +124,7 @@ const projects = [
       "/projects/design/BANNER 6X3 RAYA.png",
       "/projects/design/Anis&Syifa_City_CSC6583C.mp4",
       "/projects/design/design.mp4",
+      "/projects/BLENDER.png",
 
     ],
 
