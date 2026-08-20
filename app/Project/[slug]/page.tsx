@@ -126,6 +126,11 @@ const projects = [
       "/projects/design/design.mp4",
 
     ],
+
+     features: [
+    "design and 3D modeling for various projects",
+  ],
+
     role: "Graphic Designer",
     year: "2026",
   },
