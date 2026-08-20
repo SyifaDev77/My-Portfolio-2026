@@ -126,16 +126,7 @@ const projects = [
       "/projects/design/design.mp4",
 
     ],
-
-     features: [
-    "Centralized document management",
-    "Reporting and administrative modules",
-    "Role-based user access",
-    "Responsive dashboard interface",
-    "Secure data management"
-  ],
-
-    role: "UI/UX Designer Internship",
+    role: "Graphic Designer",
     year: "2026",
   },
 
